@@ -4,8 +4,7 @@ from html import escape
 import streamlit as st
 
 from condition_info import CONDITIONS
-from config import (AUTHOR_NAME_AR, AUTHOR_NAME_EN, FEATURE_INFO, FEATURE_ORDER, LINKS,
-                    LOW_CONFIDENCE_THRESHOLD)
+from config import FEATURE_INFO, FEATURE_ORDER, LOW_CONFIDENCE_THRESHOLD
 from model_utils import (load_model_and_meta, model_files_exist, predict, sklearn_mismatch)
 from translations import TEXTS
 
@@ -77,11 +76,6 @@ table.lab th:first-child { text-align: start; }
 .info ul { margin: 0; padding-inline-start: 1.3rem; line-height: 1.9; }
 .note { background: #FFF6E5; border: 1px solid #F0D8A8; border-radius: 10px; padding: .8rem 1rem; margin-top: 1rem; line-height: 1.9; }
 
-.author-card { margin-top: 2.5rem; padding: 1.2rem 1rem; border-radius: 14px; text-align: center; background: #12303B; color: #fff; }
-.author-card .name { font-size: 1.2rem; font-weight: 700; margin: .2rem 0 .8rem; }
-.author-card a { display: inline-block; margin: .2rem .3rem; padding: .35rem .9rem; border-radius: 999px;
-                 background: rgba(255,255,255,.14); color: #fff !important; text-decoration: none; font-weight: 600; }
-.author-card a:hover { background: rgba(255,255,255,.28); }
 @media (max-width: 640px) {
   .hero { flex-direction: column; align-items: flex-start; padding: 1.3rem; }
   .hero h1 { font-size: 1.45rem; }
@@ -148,19 +142,6 @@ def load_example(cls, meta):
     for f, val in meta["examples"][cls].items():
         st.session_state[input_key(f)] = round(float(val), FEATURE_INFO[f]["dec"])
     st.session_state.pop("result", None)
-
-
-def author_card():
-    name = AUTHOR_NAME_AR if lang == "ar" else AUTHOR_NAME_EN
-    links = "".join(
-        f'<a href="{url}" target="_blank" rel="noopener noreferrer">{label}</a>'
-        for label, url in LINKS.items() if url
-    )
-    st.markdown(
-        f'<div class="author-card"><div>{t["built_by"]}</div><div class="name">{name}</div>'
-        f'<div>{t["follow_me"]}</div><div>{links}</div></div>',
-        unsafe_allow_html=True,
-    )
 
 
 def bullets(items):
@@ -330,4 +311,3 @@ if page == "home":
 else:
     about_page()
 
-author_card()
