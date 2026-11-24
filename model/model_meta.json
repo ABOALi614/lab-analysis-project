@@ -1,0 +1,97 @@
+{
+  "features": [
+    "HGB",
+    "RBC",
+    "HCT",
+    "WBC",
+    "MCV",
+    "MCH",
+    "MCHC",
+    "PLT"
+  ],
+  "classes": [
+    "healthy",
+    "iron_deficiency",
+    "macrocytic",
+    "normocytic_normochromic"
+  ],
+  "ranges": {
+    "HGB": [
+      3.1,
+      16.2
+    ],
+    "RBC": [
+      1.36,
+      6.9
+    ],
+    "HCT": [
+      10.1,
+      49.8
+    ],
+    "WBC": [
+      0.8,
+      45.7
+    ],
+    "MCV": [
+      56.1,
+      122.1
+    ],
+    "MCH": [
+      11.4,
+      41.2
+    ],
+    "MCHC": [
+      20.3,
+      42.0
+    ],
+    "PLT": [
+      24.0,
+      534.0
+    ]
+  },
+  "examples": {
+    "healthy": {
+      "HGB": 13.8,
+      "RBC": 5.09,
+      "HCT": 46.15,
+      "WBC": 7.8,
+      "MCV": 88.95,
+      "MCH": 28.8,
+      "MCHC": 32.0,
+      "PLT": 211.5
+    },
+    "iron_deficiency": {
+      "HGB": 9.8,
+      "RBC": 4.58,
+      "HCT": 34.4,
+      "WBC": 7.2,
+      "MCV": 74.2,
+      "MCH": 21.5,
+      "MCHC": 29.6,
+      "PLT": 187.0
+    },
+    "macrocytic": {
+      "HGB": 10.4,
+      "RBC": 3.12,
+      "HCT": 46.15,
+      "WBC": 6.1,
+      "MCV": 104.1,
+      "MCH": 33.9,
+      "MCHC": 31.5,
+      "PLT": 174.5
+    },
+    "normocytic_normochromic": {
+      "HGB": 11.9,
+      "RBC": 4.06,
+      "HCT": 46.15,
+      "WBC": 7.0,
+      "MCV": 87.8,
+      "MCH": 29.3,
+      "MCHC": 32.9,
+      "PLT": 210.0
+    }
+  },
+  "sklearn_version": "1.6.1",
+  "test_accuracy": 0.9897959183673469,
+  "n_samples": 486
+}
