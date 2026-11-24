@@ -1,0 +1,7 @@
+ضع هنا الملفين اللي هيطلعوا لك من Colab بعد التدريب:
+  1) cbc_model.joblib
+  2) model_meta.json
+
+Put the two files produced by the Colab notebook here:
+  1) cbc_model.joblib
+  2) model_meta.json
